@@ -7,11 +7,11 @@ import Carousel from '../../../components/carousel/Carousel'
 
 
 
-const Popular = () => {
+const TopRated = () => {
 
   const [endpoint, setendpoint] = useState("movie")
 
-  const {data, loading} = useFetch(`/${endpoint}/popular`)
+  const {data, loading} = useFetch(`/${endpoint}/top_rated`)
 
   const onTabChange = (tab) => {
     setendpoint(tab === "Movies" ? "movie" : "tv")
@@ -21,7 +21,7 @@ const Popular = () => {
     <div className='carouselSection'>
         <ContentWrapper>
           <span className='carouselTitle'>
-            What's Popular
+            Top Rated
           </span>
           <SwitchTabs data={["Movies", "TV Shows"]} onTabChange={onTabChange} ></SwitchTabs>
         </ContentWrapper>
@@ -30,4 +30,4 @@ const Popular = () => {
   )
 }
 
-export default Popular
+export default TopRated

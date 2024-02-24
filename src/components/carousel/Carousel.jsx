@@ -17,7 +17,7 @@ import "./style.scss";
 
 
 
-const Carousel = ({data, loading}) => {
+const Carousel = ({data, loading, endpoint}) => {
 
 
 
@@ -60,7 +60,7 @@ const Carousel = ({data, loading}) => {
               data?.map((item) => {
                     const posterUrl = item.poster_path ? url.poster + item.poster_path : PosterFallback
                   return (
-                    <div className="carouselItem" onClick={() => navigate(`/${item.media_type}/${item.id}`)} key={item.id} >
+                    <div className="carouselItem" onClick={() => navigate(`/${item.media_type || endpoint}/${item.id}`)} key={item.id} >
                         <div className="posterBlock">
                             <Img src={posterUrl} />
                             <CircleRating rating={item.vote_average.toFixed(1)} />
