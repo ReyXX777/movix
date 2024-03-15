@@ -17,7 +17,7 @@ import "./style.scss";
 
 
 
-const Carousel = ({data, loading, endpoint}) => {
+const Carousel = ({data, loading, endpoint, title}) => {
 
 
 
@@ -51,6 +51,7 @@ const Carousel = ({data, loading, endpoint}) => {
   return (
     <div className="carousel">
       <ContentWrapper>
+        {title && <div className="carouselTitle">{title}</div>}
       <BsFillArrowLeftCircleFill className="carouselLeftNav arrow" onClick={() => navigation("left")} />
       <BsFillArrowRightCircleFill className="carouselRighttNav arrow" onClick={() => navigation("right")} />
       {
